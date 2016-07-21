@@ -21,7 +21,12 @@ export class DataService {
   }
 
   deleteAllData(): Observable<any> {
-    return this._http.delete('https://read-later-service.firebaseio.com/data.json')
+    return this._http.delete(`https://read-later-service.firebaseio.com/data/.json`)
+      .map(response => response.json());
+  }
+
+  deleteData(id): Observable<any> {
+    return this._http.delete(`https://read-later-service.firebaseio.com/data/${id}.json`)
       .map(response => response.json());
   }
 
