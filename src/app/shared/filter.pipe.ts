@@ -5,23 +5,28 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class Filter implements PipeTransform {
-  transform(value: any, args?: any): any {
-    if (value.length === 0) {
+  transform(value:any, args?:any):any {
+    if (args == null) {
+      console.log('if (args == null)');
       return value;
     }
-    let resultArray = [];
-    for (let i = 0; i < value.length; i++) {
-      let arrkey = Object.keys(value[i]);
-      for (let j = 0; j < arrkey.length; j++){
-        if(value[i][arrkey[j]].match('^.*' + args + '.*$')) {
-          console.log(value[i][arrkey[j]]);
-          console.log('^.*' + args + '.*$');
-           resultArray.push(value[i]);
 
+    let resultArray = [];
+
+    value.map((item) => {
+      const itemKeys = Object.keys(item);
+
+      let contains;
+
+      itemKeys.map((key) => {
+        if (item[key].match(`^.*${args}.*$`)) {
+          contains = true
         }
-      }
-    }
-    console.log(resultArray);
+      })
+
+      if (contains) resultArray.push(item)
+    })
+
     return resultArray;
   }
 }
