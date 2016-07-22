@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
           <ul class="nav navbar-nav">
             <li><a [routerLink]="['signup']">Sign Up</a></li>
             <li><a [routerLink]="['signin']">Sign In</a></li>
-            <li><a [routerLink]="['protected']">Protected</a></li>
+            <li><a [routerLink]="['read']">My Articles</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" *ngIf="isAuth()">
             <li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>

@@ -1,0 +1,47 @@
+.articles-detail {
+  background-color: rgba(149, 214, 233, 0.48);
+  color: #3A3A3A;
+  min-height: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.linkbut {
+  position:absolute;
+  right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer
+}
+.linkbut:hover {
+  color:black
+}
+.without {
+  list-style-type: none;
+}
+.article {
+  padding: 10px;
+  min-height: 30px;
+  border-radius: 5px;
+}
+.title {
+  font-size: 14px;
+  color: #2b81af;
+  margin-bottom: 10px;
+}
+.body {
+  font-size: 12px;
+  color: #001f3f;
+  margin-bottom: 5px;
+}
+.url {
+  font-size: 10px;
+  color: grey;
+  cursor: pointer
+}
+.article {
+  margin-top: 20px;
+  background-color: lightgrey;
+  margin-right: 5px;
+}
